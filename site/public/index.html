@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>od danas do sutra · odds.domovina.ai</title>
+<meta name="description" content="Tvoj glas vrijedi 0 ili 20. Trebao bi vrijediti 1. Dva društvena problema u Hrvatskoj, činjenice s izvorima i prijedlog rješenja: 1 osoba = 1 glas i P2P likvidnost kao javna infrastruktura.">
+<link rel="canonical" href="https://odds.domovina.ai/">
+<meta property="og:type" content="video.other">
+<meta property="og:url" content="https://odds.domovina.ai/">
+<meta property="og:title" content="Tvoj glas vrijedi 0 ili 20. Trebao bi vrijediti 1.">
+<meta property="og:description" content="Dva problema koja su zapravo jedan: tko upravlja novcem građana i po kojem pravilu glasa. Svaka brojka s izvorom.">
+<meta property="og:image" content="https://odds.domovina.ai/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:video" content="https://odds.domovina.ai/od-danas-do-sutra.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<meta property="og:locale" content="hr_HR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#04101f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23002F6C'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='38' font-weight='800' fill='%23fff' text-anchor='middle'>1</text></svg>">
+<style>
+:root{
+  --navy:#002F6C; --navy-2:#0a3f86; --red:#FF0000;
+  --ink:#04101f; --ink-2:#0b1a30; --sky:#7fb2ff; --sky-2:#8fc0ff;
+  --paper:#ffffff; --paper-2:#f4f6fa; --text:#14213a; --muted:#5b6475; --line:#e2e6ee;
+  --radius:16px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);
+  font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--navy);text-underline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.num{font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{background:radial-gradient(1200px 600px at 50% 0%,#0a2a55 0%,var(--ink) 60%);color:#fff;padding:20px 0 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:40px}
+.brand{color:#fff;text-decoration:none;font-weight:700;letter-spacing:.2px}
+.brand span{color:var(--sky)}
+.top nav a{color:#c9d6ea;text-decoration:none;font-size:15px;margin-left:20px}
+.top nav a:hover{color:#fff}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sky-2);font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.kicker i{display:inline-block;width:36px;height:2px;background:var(--sky)}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.05;letter-spacing:-.02em;margin:16px 0 18px;font-weight:800;max-width:16ch}
+h1 em{font-style:normal;color:var(--sky)}
+.lead{color:#c9d6ea;font-size:clamp(17px,2vw,20px);max-width:60ch;margin:0 0 36px}
+.player{position:relative;border-radius:var(--radius);overflow:hidden;background:#000;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.7),0 0 0 1px rgba(127,178,255,.18)}
+.player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.chapters{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.chapters button{width:100%;text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(127,178,255,.16);
+  color:#dfe8f6;border-radius:10px;padding:10px 12px;font:inherit;font-size:14px;line-height:1.3;cursor:pointer;transition:background .15s,border-color .15s}
+.chapters button:hover,.chapters button[aria-current="true"]{background:rgba(127,178,255,.12);border-color:var(--sky)}
+.chapters b{display:block;color:var(--sky);font-weight:600;font-size:12px;margin-bottom:2px}
+
+/* sections */
+section{padding:84px 0}
+section.alt{background:var(--paper-2)}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.015em;margin:0 0 14px;font-weight:800;color:var(--ink)}
+.sub{color:var(--muted);max-width:62ch;margin:0 0 44px;font-size:18px}
+.label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.label.warn{color:#fff;background:var(--navy);padding:4px 10px;border-radius:999px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.stat .big{font-size:clamp(34px,4.4vw,48px);font-weight:800;line-height:1;color:var(--navy);letter-spacing:-.02em}
+.stat .big small{font-size:.5em;color:var(--muted);font-weight:700}
+.stat p{margin:12px 0 0;color:var(--text);font-size:15.5px}
+.stat .src{display:block;margin-top:10px;color:var(--muted);font-size:13px}
+
+.chains{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.chain{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--paper)}
+.chain h3{margin:0 0 18px;font-size:21px;color:var(--ink)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 18px 44px;counter-increment:s}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:14px;font-weight:700;display:grid;place-items:center}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:13px;top:30px;bottom:2px;width:2px;background:var(--line)}
+.steps li.stop::before{background:var(--red)}
+.steps strong{color:var(--ink)}
+.note{margin-top:22px;padding:14px 16px;border-left:3px solid var(--navy);background:var(--paper-2);border-radius:0 10px 10px 0;font-size:15px;color:var(--muted)}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+.col{border-radius:var(--radius);padding:24px 26px}
+.col.today{background:var(--paper);border:1px solid var(--line)}
+.col.tomorrow{background:var(--ink);color:#dfe8f6}
+.col h4{margin:0 0 12px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.col.today h4{color:var(--muted)}
+.col.tomorrow h4{color:var(--sky)}
+.col ul{margin:0;padding-left:18px}
+.col li{margin:6px 0}
+.col.tomorrow strong{color:#fff}
+
+.proposals{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.prop{border-radius:var(--radius);padding:30px;background:linear-gradient(160deg,var(--navy) 0%,#001b40 100%);color:#e6eefb}
+.prop h3{margin:6px 0 10px;font-size:26px;color:#fff;letter-spacing:-.01em}
+.prop blockquote{margin:0 0 20px;color:var(--sky-2);font-size:17px}
+.prop ul{margin:0 0 22px;padding-left:18px}
+.prop li{margin:7px 0}
+.prop a{color:#fff;font-weight:600}
+.prop .tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky)}
+
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.doc{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--paper);transition:border-color .15s,transform .15s}
+.doc:hover{border-color:var(--navy);transform:translateY(-2px)}
+.doc b{display:block;color:var(--navy);font-size:13px;margin-bottom:4px}
+.doc span{display:block;font-weight:700;color:var(--ink);margin-bottom:6px}
+.doc p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
+
+.rule{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.rule div{padding:18px 20px;border-radius:12px;background:var(--paper);border:1px solid var(--line);font-size:15.5px}
+.rule strong{display:block;color:var(--ink);margin-bottom:4px}
+
+footer{background:var(--ink);color:#9fb0c8;padding:44px 0;font-size:14.5px}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:#dfe8f6}
+
+@media (max-width:900px){
+  .stats,.docs,.rule{grid-template-columns:1fr 1fr}
+  .chains,.compare,.proposals{grid-template-columns:1fr}
+  .chapters{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .top nav{display:none}
+  .stats,.docs,.rule{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .chain,.prop{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.doc{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="/">odds<span>.domovina.ai</span></a>
+      <nav aria-label="Glavna navigacija">
+        <a href="#problem">Problem</a>
+        <a href="#prijedlog">Prijedlog</a>
+        <a href="#dokumenti">Dokumenti</a>
+      </nav>
+    </div>
+
+    <div class="kicker"><i></i>od danas do sutra</div>
+    <h1>Tvoj glas vrijedi 0 ili 20. Trebao bi vrijediti <em>1</em>.</h1>
+    <p class="lead">Dva društvena problema u Hrvatskoj koja su zapravo jedan: tko upravlja novcem građana i po kojem pravilu glasa. Činjenice s izvorima, i prijedlog rješenja koje služi općem dobru.</p>
+
+    <div class="player">
+      <video id="video" controls playsinline preload="metadata" poster="/poster.jpg">
+        <source src="/od-danas-do-sutra.mp4" type="video/mp4">
+        Preglednik ne podržava video. <a href="/od-danas-do-sutra.mp4">Preuzmi video (MP4, 15 MB)</a>.
+      </video>
+    </div>
+
+    <ol class="chapters" aria-label="Poglavlja videa">
+      <li><button data-t="0"><b>0:00</b>Tvoj glas vrijedi 0 ili 20</button></li>
+      <li><button data-t="8"><b>0:08</b>Matematika praga</button></li>
+      <li><button data-t="23"><b>0:23</b>Lanac vlasti</button></li>
+      <li><button data-t="34"><b>0:34</b>Lanac novca</button></li>
+      <li><button data-t="47"><b>0:47</b>Narodna obveznica 2023.</button></li>
+      <li><button data-t="58"><b>0:58</b>1 osoba = 1 glas</button></li>
+      <li><button data-t="72"><b>1:12</b>P2P likvidnost</button></li>
+      <li><button data-t="85"><b>1:25</b>Od danas do sutra</button></li>
+    </ol>
+  </div>
+</header>
+
+<main>
+
+<section id="brojke">
+  <div class="wrap">
+    <span class="label">Brojke</span>
+    <h2>Šest brojki koje se mogu provjeriti</h2>
+    <p class="sub">Svaka brojka ima izvor s datumom u <a href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/05-izvori.md">popisu izvora</a>.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="big num">14<small>/14</small></div>
+        <p>mandata izborne jedinice može dobiti lista s <strong>5,0048 %</strong> glasova, uz prag od 5 % i D'Hondta. Glas njezina birača vrijedi ~20, glas svih ostalih 0.</p>
+        <span class="src">Primjer olovkom, docs/01 §A2</span>
+      </div>
+      <div class="stat">
+        <div class="big num">20,7 %</div>
+        <p>biračkog tijela dalo je HDZ-u <strong>40,4 %</strong> mandata na izborima 2024. Gallagherov indeks nerazmjernosti: 7,04.</p>
+        <span class="src">Izbori 17. 4. 2024. [S12][S21]</span>
+      </div>
+      <div class="stat">
+        <div class="big num">236.881</div>
+        <p>glasova (11,39 %) dano je 2024. listama ispod praga u svojoj jedinici i nije pretvoreno ni u jedan mandat.</p>
+        <span class="src">[S21]</span>
+      </div>
+      <div class="stat">
+        <div class="big num">~90 %</div>
+        <p>imovine bankovnog sustava drže banke u stranom vlasništvu. Glas u njima ima dionica, ne osoba.</p>
+        <span class="src">[S13][S14]</span>
+      </div>
+      <div class="stat">
+        <div class="big num">1,36 <small>mlrd €</small></div>
+        <p>dobiti banaka u RH u 2023. (+91,2 %), uz povrat na kapital 15,5 %.</p>
+        <span class="src">[S17]</span>
+      </div>
+      <div class="stat">
+        <div class="big num">44.843</div>
+        <p>građana posudilo je državi izravno <strong>1,335 mlrd €</strong> uz 3,65 % (narodna obveznica 2023.). Kamata je otišla građanima, ne posredniku.</p>
+        <span class="src">[S19]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="alt">
+  <div class="wrap">
+    <span class="label">Trenutno stanje</span>
+    <h2>Dva lanca koja se spajaju u istoj točki</h2>
+    <p class="sub">Glas građanina ne vrijedi jednako, a vlast izabrana tim glasom imenuje one koji odlučuju o bankama. Novac građana u međuvremenu kruži kroz banke kojima upravlja kapital.</p>
+
+    <div class="chains">
+      <div class="chain">
+        <h3>Lanac vlasti</h3>
+        <ol class="steps">
+          <li><strong>Birači</strong> glasaju uz prag od 5 % po jedinici i D'Hondtovu metodu.</li>
+          <li><strong>Hrvatski sabor</strong>: manjina birača može dati većinu mandata, na 4 godine i s cijelim proračunom.</li>
+          <li><strong>Savjet HNB-a</strong>: svih 8 članova imenuje Sabor.</li>
+          <li><strong>HNB / ECB</strong> odlučuju o licenci za rad banke.</li>
+          <li class="stop"><strong>ZEF / Ebanka</strong>, zadružna banka građana po načelu 1 član = 1 glas, odbijena je 2017.</li>
+        </ol>
+        <div class="note">HNB je naveo razloge, među ostalim nedokazan minimalni temeljni kapital (tada 40 mil. kuna). Danas bi licencu na prijedlog HNB-a davao ECB.</div>
+      </div>
+      <div class="chain">
+        <h3>Lanac novca</h3>
+        <ol class="steps">
+          <li><strong>Građani i tvrtke</strong> plaćaju poreze i doprinose.</li>
+          <li><strong>Državni proračun</strong> (račun u HNB-u) isplaćuje plaće, mirovine i potpore.</li>
+          <li><strong>Računi građana</strong> u poslovnim bankama: taj novac postaje depozit.</li>
+          <li><strong>Banke</strong>, ~90 % u stranom vlasništvu, kreditiraju iste građane uz kamatu.</li>
+          <li class="stop"><strong>Strani vlasnici</strong>: kamatna marža postaje dobit, dobit dividenda.</li>
+        </ol>
+        <div class="note">Izravni put postoji samo u jednom smjeru: građanin može posuditi državi (narodna obveznica). Ne postoji put kojim zajednica građana posuđuje građaninu za njegovu investiciju.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prijedlog">
+  <div class="wrap">
+    <span class="label warn">Prijedlog, ne činjenica</span>
+    <h2 style="margin-top:14px">Od danas do sutra</h2>
+    <p class="sub">Pristup likvidnosti je javna infrastruktura, kao ceste, struja i internet. Ovo je blueprint koji iteriramo; otvorena pitanja su zapisana.</p>
+
+    <div class="compare">
+      <div class="col today">
+        <h4>Danas</h4>
+        <ul>
+          <li>Glas vrijedi između 0 i ~20 proporcionalnih glasova.</li>
+          <li>Građanin štedi uz nisku kamatu, posuđuje uz višu.</li>
+          <li>Marža odlazi kao dividenda stranim vlasnicima.</li>
+          <li>Bankom upravlja 1 dionica = 1 glas.</li>
+        </ul>
+      </div>
+      <div class="col tomorrow">
+        <h4>Sutra</h4>
+        <ul>
+          <li><strong>Glas vrijedi 1</strong>, mjereno brojem, ne dojmom.</li>
+          <li>Građanin posuđuje građaninu kroz javnu P2P infrastrukturu.</li>
+          <li>Kamata ostaje kod zajmodavaca i u zajedničkoj pričuvi.</li>
+          <li>Upravlja se po načelu <strong>1 član = 1 glas</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="proposals">
+      <div class="prop">
+        <span class="tag">Rješenje 1</span>
+        <h3>1 osoba = 1 glas</h3>
+        <blockquote>Svaki glas ima istu težinu, na izborima i u upravljanju javnom infrastrukturom.</blockquote>
+        <ul>
+          <li><strong>Pravilo</strong>: razmjernost koja se mjeri, npr. kompenzacijski mandati i rezervni glas.</li>
+          <li><strong>Identitet</strong>: jedna stvarna osoba, jedan glas, bez duplikata i bez otkrivanja tko je glasao (eID, ZK dokaz).</li>
+          <li><strong>Provjerljivost</strong>: svatko može sam prebrojati.</li>
+        </ul>
+        <a href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/02-rjesenje-1-osoba-1-glas.md">Pročitaj rješenje 1 →</a>
+      </div>
+      <div class="prop">
+        <span class="tag">Rješenje 2</span>
+        <h3>P2P likvidnost</h3>
+        <blockquote>Kamata ostaje kod onih koji nose rizik i u zajedničkoj pričuvi, ne odlazi dioničarima.</blockquote>
+        <ul>
+          <li><strong>Neprofitna infrastruktura</strong> otvorenog koda, kao cesta: gradi se za sve.</li>
+          <li><strong>Zajam razdijeljen</strong> na mnogo malih dijelova; dio kamate puni pričuvni fond za gubitke.</li>
+          <li><strong>Pravni put u fazama</strong>, s rizicima napisanima iskreno: ulog nije depozit i nije osiguran.</li>
+        </ul>
+        <a href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/03-rjesenje-p2p-likvidnost.md">Pročitaj rješenje 2 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dokumenti" class="alt">
+  <div class="wrap">
+    <span class="label">Blueprint</span>
+    <h2>Dokumenti</h2>
+    <p class="sub">Vizija i blueprint, ne implementacija: markdown i Mermaid dijagrami, otvoreni za provjeru na GitHubu.</p>
+    <div class="docs">
+      <a class="doc" href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/01-trenutno-stanje.md"><b>01</b><span>Trenutno stanje</span><p>Činjenični lanac korak po korak: narod → Sabor → Savjet HNB-a → licenca; porezi → proračun → banke → dobit.</p></a>
+      <a class="doc" href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/02-rjesenje-1-osoba-1-glas.md"><b>02</b><span>1 osoba = 1 glas</span><p>Razmjeran izborni sustav, digitalni identitet bez duplikata, provjerljivo glasanje.</p></a>
+      <a class="doc" href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/03-rjesenje-p2p-likvidnost.md"><b>03</b><span>P2P likvidnost</span><p>P2P banka kao javna infrastruktura: načela, slojevi, tok novca, pravni put, rizici.</p></a>
+      <a class="doc" href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/04-gradivni-blokovi.md"><b>04</b><span>Gradivni blokovi</span><p>Što već postoji u ekosustavu i kako se poopćuje.</p></a>
+      <a class="doc" href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/05-izvori.md"><b>05</b><span>Izvori</span><p>Svi izvori s datumima.</p></a>
+      <a class="doc" href="https://github.com/domovinatv/odds.domovina.ai/blob/main/docs/06-iteracije.md"><b>06</b><span>Iteracije</span><p>Otvorena pitanja i dnevnik promjena po iteracijama.</p></a>
+    </div>
+
+    <div class="rule">
+      <div><strong>Činjenice i stavovi odvojeni</strong>Gdje je nešto stav ili procjena, tako piše.</div>
+      <div><strong>Svaka činjenica ima izvor</strong>Izvori su navedeni s datumom.</div>
+      <div><strong>Neprovjereno je označeno</strong>Brojke koje nisu provjerene nose oznaku [provjeriti].</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>odds.domovina.ai · stanje na dan 18. 10. 2026.</div>
+    <div><a href="https://github.com/domovinatv/odds.domovina.ai">GitHub</a> · <a href="/od-danas-do-sutra.mp4" download>Preuzmi video</a> · <a href="https://domovina.ai">domovina.ai</a></div>
+    <div>Glazba: HeyGen music library. Zvučni efekti: Pixabay Content License.</div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const v = document.getElementById('video');
+  const btns = [...document.querySelectorAll('.chapters button')];
+  const ts = btns.map(b => +b.dataset.t);
+  btns.forEach(b => b.addEventListener('click', () => {
+    v.currentTime = +b.dataset.t;
+    v.play().catch(() => {});
+  }));
+  v.addEventListener('timeupdate', () => {
+    let i = 0;
+    while (i + 1 < ts.length && v.currentTime >= ts[i + 1]) i++;
+    btns.forEach((b, j) => b.setAttribute('aria-current', j === i ? 'true' : 'false'));
+  });
+})();
+</script>
+</body>
+</html>

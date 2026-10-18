@@ -38,7 +38,7 @@ Riješiti dva problema koja su zapravo jedan:
 
 ## Što ovaj repo jest
 
-Vizija i blueprint, ne implementacija. Nema koda: samo markdown i Mermaid
+Vizija i blueprint, ne implementacija. Nema koda (osim landinga u `site/`): samo markdown i Mermaid
 dijagrami koji opisuju problem i rješenje. Iteriramo N puta; svaka iteracija
 je zapisana u [docs/06-iteracije.md](docs/06-iteracije.md).
 
@@ -47,3 +47,23 @@ je zapisana u [docs/06-iteracije.md](docs/06-iteracije.md).
 Činjenice i stavovi su odvojeni. Svaka činjenica ima izvor u
 [docs/05-izvori.md](docs/05-izvori.md). Gdje je nešto stav ili procjena, tako
 piše. Brojke koje nisu provjerene označene su s **[provjeriti]**.
+
+## Web: odds.domovina.ai
+
+Landing s videom *od danas do sutra* (92 s) živi u [`site/`](site/): statični
+`site/public/index.html` i Cloudflare Worker na računu D.O.M., s custom
+domenom `odds.domovina.ai`. Video se ne poslužuje iz statičkih asseta (oni ne
+podržavaju Range, pa ga Safari/iOS ne bi pustio), nego iz R2 bucketa
+`odds-domovina-ai` preko `site/src/index.js`.
+
+Video se renderira u privatnom repou `domovinatv/hyperframes-domovina-ai`
+(`videos/odds-blueprint/renders/video.mp4`) i nije u gitu. Novi render:
+
+```bash
+cd site
+ffmpeg -i <render>.mp4 -c copy -movflags +faststart media/od-danas-do-sutra.mp4
+npx wrangler r2 object put odds-domovina-ai/od-danas-do-sutra.mp4 \
+  --file media/od-danas-do-sutra.mp4 --content-type video/mp4 \
+  --cache-control "public, max-age=86400" --remote
+npx wrangler deploy   # samo ako se mijenja index.html, poster ili Worker
+```
