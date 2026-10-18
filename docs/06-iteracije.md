@@ -38,3 +38,13 @@ bilježi što se promijenilo i što je ostalo otvoreno.
       zajam građaninu (ne tvrtki) uopće može ponuditi.
 - [ ] Porezni tretman kamate za građanina zajmodavca.
 - [ ] Model zajma, javna pravila ocjene rizika, veličina pričuvnog fonda.
+
+## Video iteracije 1 (u izradi, 2026-10-18)
+
+- HyperFrames projekt: `/Users/ms/git/domovinatv/hyperframes-domovina-ai/videos/odds-blueprint`
+  (lokalno, još nije u gitu). Workflow `/faceless-explainer`, 16:9, ~90 s,
+  bez naracije, glazba iz HeyGena, domovina.ai boje.
+- Scenarij od 8 scena i brief su u `BRIEF.md`, a stanje i sljedeći koraci u
+  `NEXT.md` tog projekta.
+- Svaka brojka u videu mora doći iz ovih dokumenata (commit 58c7a1c).
+  Kad se brojka ovdje promijeni, mijenja se i u videu.
