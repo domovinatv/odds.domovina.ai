@@ -39,12 +39,17 @@ bilježi što se promijenilo i što je ostalo otvoreno.
 - [ ] Porezni tretman kamate za građanina zajmodavca.
 - [ ] Model zajma, javna pravila ocjene rizika, veličina pričuvnog fonda.
 
-## Video iteracije 1 (u izradi, 2026-10-18)
+## Video iteracije 1 (gotov, 2026-10-18)
 
-- HyperFrames projekt: `/Users/ms/git/domovinatv/hyperframes-domovina-ai/videos/odds-blueprint`
-  (lokalno, još nije u gitu). Workflow `/faceless-explainer`, 16:9, ~90 s,
-  bez naracije, glazba iz HeyGena, domovina.ai boje.
-- Scenarij od 8 scena i brief su u `BRIEF.md`, a stanje i sljedeći koraci u
-  `NEXT.md` tog projekta.
-- Svaka brojka u videu mora doći iz ovih dokumenata (commit 58c7a1c).
+- HyperFrames projekt: `videos/odds-blueprint` u privatnom repou
+  [domovinatv/hyperframes-domovina-ai](https://github.com/domovinatv/hyperframes-domovina-ai).
+  Workflow `/faceless-explainer`, 16:9, 92 s, bez naracije, glazba iz HeyGena,
+  domovina.ai boje. Render je lokalan (`renders/video.mp4`, nije u gitu).
+- 8 okvira: hook 0 ili 20 → matematika praga → lanac vlasti → lanac novca →
+  narodna obveznica 2023. → rješenje 1 → rješenje 2 → od danas do sutra.
+  Storyboard s izvorom svake brojke je u `STORYBOARD.md`, stanje u `NEXT.md`.
+- Nacrt YouTube naslova, opisa i poglavlja: `YOUTUBE.md`. Nije objavljeno.
+- Otvoreno: završna kartica navodi `odds.domovina.ai`, a domena 2026-10-18 ne
+  odgovara. Prije objave pokrenuti domenu ili kartice promijeniti na GitHub link.
+- Svaka brojka u videu dolazi iz ovih dokumenata (commit 58c7a1c).
   Kad se brojka ovdje promijeni, mijenja se i u videu.
