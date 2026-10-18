@@ -53,3 +53,10 @@ bilježi što se promijenilo i što je ostalo otvoreno.
   odgovara. Prije objave pokrenuti domenu ili kartice promijeniti na GitHub link.
 - Svaka brojka u videu dolazi iz ovih dokumenata (commit 58c7a1c).
   Kad se brojka ovdje promijeni, mijenja se i u videu.
+
+## Landing (gotov, 2026-10-18)
+
+- https://odds.domovina.ai je živ: landing s videom, brojkama s izvorima, oba
+  rješenja označena kao prijedlog i linkovima na dokumente. Kod u `site/`.
+- Time je riješeno otvoreno pitanje iz video iteracije 1: domena sa završne
+  kartice sada radi. Postav i zamke: [2026-10-18-landing-cloudflare](2026-10-18-landing-cloudflare.md).
